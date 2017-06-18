@@ -29,11 +29,16 @@
 #' @return a dplyr tbl_df, a wrapper around the data that came from the csv file.
 #'     If the file does not exist, an error message will be printed.
 #'
-#' @importFrom tidyverse (dplyr and readr)
+#' @importFrom readr read_csv
+#' @importFrom dplyr tbl_df
+#'
+#' @source extdate/accident_year.csv.bz2
+#' \dontrun{system.file("extdata", "accident_year.csv.bz2", package = "packFars"). }
 #'
 #' @export
 #'
-#' @examples x <- fars_read('myFile.csv')
+#' @examples
+#' \dontrun{x <- fars_read('myFile.csv')}
 #'
 
 fars_read <- function(filename) {
@@ -55,6 +60,9 @@ fars_read <- function(filename) {
 #' @param year  A year as a string, with no restrictions on format
 #'
 #' @return a filename in the format 'accident_year.csv.bz2'. As a side effect, the filename is printed by the function.
+#'
+#' @source extdate/accident_year.csv.bz2
+#' \dontrun{system.file("extdata", "accident_year.csv.bz2", package = "packFars"). }
 #'
 #' @export
 #'
@@ -80,11 +88,13 @@ make_filename <- function(year) {
 #'
 #' @return Creates one or more datasets based on year number.  Returns NULL if there is an error
 #'
-#' @importFrom dplyr
+#' @importFrom dplyr mutate
+#' @importFrom dplyr select
 #'
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples
+#' \dontrun{
 #'      fars_read_years(1999)
 #'      fars_read_years(as.list(1999, 2000, 2001))
 #'      fars_read_years(1999:2016)
@@ -116,11 +126,16 @@ fars_read_years <- function(years) {
 #'
 #' @return A wide data frame of counts by month and year,
 #'
-#' @importFrom dplyr tidyr
+#' @importFrom  dplyr bind_rows
+#' @importFrom  dplyr group_by
+#' @importFrom  dplyr summarize
+#' @importFrom  tidyr spread
+#'
 #'
 #' @export
 #'
-#' @examples  \dontrun{
+#' @examples
+#' \dontrun{
 #'      fars_summarize_years(1999)
 #'      fars_summarize_years(as.list(1999, 2000, 2001))
 #'      fars_summarize_years(1999:2016)
@@ -155,10 +170,12 @@ fars_summarize_years <- function(years) {
 #' @export
 
 #'
-#' @importFrom dplyr maps graphics
+#' @importFrom dplyr filter
+#' @importFrom maps map
+#' @importFrom graphics points
 #'
-#'
-#' @examples  \dontrun{
+#' @examples
+#' \dontrun{
 #' fars_map_state(1, 2013)
 #' }
 #'

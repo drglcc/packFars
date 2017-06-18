@@ -1,11 +1,26 @@
 Package: packFars
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Loads The Fars Data and Generates A Plot
+Version: 1.0.7
+Author: Someone Else
+Maintainer: drglcc <rgrasser@acm.org>
+Description: Accepts a state number and year from the user/calling program
+    Makes the appropriate filename using the year and the make_filename function
+    gets a data frame from fars_read()
+    Error checks to make sure the state number exists
+    If so, uses maps and graphics to create plots based on latitude and longitude from the data file
+License: GPL (>= 2)
 Encoding: UTF-8
+URL: https://github.com/drglcc/packFars
+Depends: R (>= 3.0.0), dplyr, readr, maps, tidyr
+ImportFrom: (dplyr bind_rows, group_by, mutate, select, tbl_df)
+ImportFrom: (readr read_csv)
+ImportFrom: (tidyr spread)
+ImportFrom: (maps map)
+ImportFrom: (graphics points)
 LazyData: true
+Suggests: knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
