@@ -4,11 +4,11 @@ Title: Loads The Fars Data and Generates A Plot
 Version: 1.0.7
 Author: Someone Else
 Maintainer: drglcc <rgrasser@acm.org>
-Description: Accepts a state number and year from the user/calling program
+Description: Accepts a state number and year from the user/calling program.
     Makes the appropriate filename using the year and the make_filename function
-    gets a data frame from fars_read()
-    Error checks to make sure the state number exists
-    If so, uses maps and graphics to create plots based on latitude and longitude from the data file
+    gets a data frame from fars_read().
+    Error checks to make sure the state number exists.
+    If so, uses maps and graphics to create plots based on latitude and longitude from the data file.
 License: GPL (>= 2)
 Encoding: UTF-8
 URL: https://github.com/drglcc/packFars

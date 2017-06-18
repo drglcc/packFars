@@ -33,12 +33,13 @@
 #' @importFrom dplyr tbl_df
 #'
 #' @source extdate/accident_year.csv.bz2
-#' \dontrun{system.file("extdata", "accident_year.csv.bz2", package = "packFars"). }
+#'
 #'
 #' @export
 #'
 #' @examples
 #' \dontrun{x <- fars_read('myFile.csv')}
+#' \dontrun{system.file("extdata", "accident_year.csv.bz2", package = "packFars"). }
 #'
 
 fars_read <- function(filename) {
@@ -62,11 +63,11 @@ fars_read <- function(filename) {
 #' @return a filename in the format 'accident_year.csv.bz2'. As a side effect, the filename is printed by the function.
 #'
 #' @source extdate/accident_year.csv.bz2
-#' \dontrun{system.file("extdata", "accident_year.csv.bz2", package = "packFars"). }
 #'
 #' @export
 #'
 #' @examples newFileName <- make_filename('2017')
+#' \dontrun{system.file("extdata", "accident_year.csv.bz2", package = "packFars")}
 
 make_filename <- function(year) {
   year <- as.integer(year)
@@ -102,6 +103,7 @@ make_filename <- function(year) {
 
 fars_read_years <- function(years) {
   lapply(years, function(year) {
+    MONTH <- year <- NULL
     file <- make_filename(year)
     tryCatch({
       dat <- fars_read(file)
@@ -143,6 +145,7 @@ fars_read_years <- function(years) {
 
 
 fars_summarize_years <- function(years) {
+  year <- MONTH <- n <- NULL
   dat_list <- fars_read_years(years)
   dplyr::bind_rows(dat_list) %>%
     dplyr::group_by(year, MONTH) %>%
@@ -184,6 +187,8 @@ fars_map_state <- function(state.num, year) {
   filename <- make_filename(year)
   data <- fars_read(filename)
   state.num <- as.integer(state.num)
+
+  STATE <- NULL
 
   if(!(state.num %in% unique(data$STATE)))
     stop("invalid STATE number: ", state.num)

@@ -5,7 +5,6 @@
 \title{Title fars_read}
 \source{
 extdate/accident_year.csv.bz2
-\dontrun{system.file("extdata", "accident_year.csv.bz2", package = "packFars"). }
 }
 \usage{
 fars_read(filename)
@@ -23,5 +22,6 @@ An error message will be printed if the file does not exist
 }
 \examples{
 \dontrun{x <- fars_read('myFile.csv')}
+\dontrun{system.file("extdata", "accident_year.csv.bz2", package = "packFars"). }
 
 }

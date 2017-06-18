@@ -5,7 +5,6 @@
 \title{Title make_filename}
 \source{
 extdate/accident_year.csv.bz2
-\dontrun{system.file("extdata", "accident_year.csv.bz2", package = "packFars"). }
 }
 \usage{
 make_filename(year)
@@ -23,4 +22,5 @@ the tar/tarball format
 }
 \examples{
 newFileName <- make_filename('2017')
+\dontrun{system.file("extdata", "accident_year.csv.bz2", package = "packFars")}
 }

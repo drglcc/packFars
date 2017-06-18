@@ -9,4 +9,8 @@ As a reminder to myself
  git push -u origin master
  
  worked to create the initial push.  
- 
+
+
+TRAVIS LINK: 
+
+[![Travis-CI Build Status](https://travis-ci.org/drglcc/packFars.svg?branch=master)](https://travis-ci.org/drglcc/packFars)
