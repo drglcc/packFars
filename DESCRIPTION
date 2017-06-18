@@ -1,6 +1,6 @@
 Package: packFars
 Type: Package
-Title: Loads The Fars Data and Generates A Plot
+Title: Loads The Fars Data and Generates A Plot 
 Version: 1.0.7
 Author: Someone Else
 Maintainer: drglcc <rgrasser@acm.org>
